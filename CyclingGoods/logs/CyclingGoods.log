@@ -1,0 +1,41 @@
+22:26:22.615 INFO   - Products were read.
+22:26:22.617 INFO   - Product: <id = 1>, <category = Cycles>, <name = Cycle Specialized S-Works Camber Carbon>, <price = 1300>.
+22:26:22.617 INFO   - Product: <id = 2>, <category = Cycles>, <name = Specialized S-Works Era Carbon;>, <price = 1190>.
+22:26:22.617 INFO   - Product: <id = 3>, <category = Cycles>, <name = Specialized S-Works StumpJumper HT Carbon World Cup>, <price = 2000>.
+22:26:22.617 INFO   - Product: <id = 4>, <category = Cycle parts>, <name = Absorber>, <price = 300>.
+22:26:22.617 INFO   - Product: <id = 5>, <category = Cycle parts>, <name = Wheel>, <price = 170>.
+22:26:22.617 INFO   - Product: <id = 6>, <category = Cycle parts>, <name = Brake pedal>, <price = 300>.
+22:26:22.617 INFO   - Product: <id = 7>, <category = Cycling accessories>, <name = lights>, <price = 30>.
+22:26:22.618 INFO   - Product: <id = 8>, <category = Cycling accessories>, <name = Foot pegs>, <price = 50>.
+22:26:22.618 INFO   - Product: <id = 9>, <category = Cycling accessories>, <name = Water bottle>, <price = 10>.
+22:26:22.618 INFO   - Product: <id = 11>, <category = Equipment>, <name = Helmet>, <price = 100>.
+22:26:22.618 INFO   - Product: <id = 12>, <category = Equipment>, <name = Summer gloves>, <price = 30>.
+22:26:22.618 INFO   - Product: <id = 15>, <category = Equipment>, <name = Feet protector>, <price = 75>.
+22:26:22.618 INFO   - Product: <id = 16>, <category = Equipment>, <name = Arms protector>, <price = 55>.
+22:26:22.639 INFO   - Product was added.
+22:26:22.645 INFO   - Product was deleted.
+22:26:22.665 INFO   - Product was updated.
+22:26:22.671 INFO   - Products were read.
+22:26:22.671 INFO   - Product: <id = 1>, <category = Cycles>, <name = Cycle Specialized S-Works Camber Carbon>, <price = 1300>.
+22:26:22.671 INFO   - Product: <id = 2>, <category = Cycles>, <name = Specialized S-Works Era Carbon;>, <price = 1190>.
+22:26:22.671 INFO   - Product: <id = 3>, <category = Cycles>, <name = Specialized S-Works StumpJumper HT Carbon World Cup>, <price = 2000>.
+22:26:22.671 INFO   - Product: <id = 4>, <category = Cycle parts>, <name = Absorber>, <price = 300>.
+22:26:22.671 INFO   - Product: <id = 5>, <category = Cycle parts>, <name = Wheel>, <price = 170>.
+22:26:22.671 INFO   - Product: <id = 6>, <category = Cycle parts>, <name = Brake pedal>, <price = 300>.
+22:26:22.671 INFO   - Product: <id = 7>, <category = Cycling accessories>, <name = lights>, <price = 30>.
+22:26:22.671 INFO   - Product: <id = 8>, <category = Cycling accessories>, <name = Foot pegs>, <price = 50>.
+22:26:22.671 INFO   - Product: <id = 9>, <category = Cycling accessories>, <name = Water bottle>, <price = 10>.
+22:26:22.671 INFO   - Product: <id = 11>, <category = Equipment>, <name = Helmet>, <price = 100>.
+22:26:22.671 INFO   - Product: <id = 12>, <category = Equipment>, <name = Summer gloves>, <price = 30>.
+22:26:22.671 INFO   - Product: <id = 15>, <category = Equipment>, <name = Feet protector>, <price = 75>.
+22:26:22.671 INFO   - Product: <id = 17>, <category = Equipment>, <name = Arms protector>, <price = 55>.
+22:26:22.678 INFO   - Products of category were read.
+22:26:22.678 INFO   - Product: <id = 11>, <category = Equipment>, <name = Helmet>, <price = 100>.
+22:26:22.679 INFO   - Product: <id = 12>, <category = Equipment>, <name = Summer gloves>, <price = 30>.
+22:26:22.679 INFO   - Product: <id = 15>, <category = Equipment>, <name = Feet protector>, <price = 75>.
+22:26:22.679 INFO   - Product: <id = 17>, <category = Equipment>, <name = Arms protector>, <price = 55>.
+22:26:22.685 INFO   - Report was done.
+22:26:22.685 INFO   - ReportLine: <category = Cycle parts>, <productsCount = 3>, <minPrice = 170>, <maxPrice = 300>.
+22:26:22.685 INFO   - ReportLine: <category = Cycles>, <productsCount = 3>, <minPrice = 1190>, <maxPrice = 2000>.
+22:26:22.685 INFO   - ReportLine: <category = Cycling accessories>, <productsCount = 3>, <minPrice = 10>, <maxPrice = 50>.
+22:26:22.685 INFO   - ReportLine: <category = Equipment>, <productsCount = 4>, <minPrice = 30>, <maxPrice = 100>.
