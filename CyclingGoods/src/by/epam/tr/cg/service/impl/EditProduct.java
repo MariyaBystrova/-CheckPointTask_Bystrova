@@ -52,7 +52,9 @@ public class EditProduct implements EditProductService {
 		EditCGDao cyclingGoodsDao = factory.getEditCGDao();
 		try {
 			// если поле не null или не пустое - то его надо изменить
-			if (Validator.nameValidation(product.getName())) {
+			if (Validator.nameValidation(product.getName())) {// сначала валидируем, а потом работаем
+				// не надо валидировать по частям
+				// у тебя логика кода в сервисах кривая, вот и получается цепочка if-в
 				if (!cyclingGoodsDao.updateNameProduct(product)) {
 					return false;
 				}
