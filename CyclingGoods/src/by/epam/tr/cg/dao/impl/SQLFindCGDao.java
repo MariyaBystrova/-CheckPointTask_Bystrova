@@ -27,7 +27,8 @@ public class SQLFindCGDao implements FindCGDao {
 		ResultSet rs = null;
 		List<Product> list = new ArrayList<>();
 		try {
-			Class.forName("org.gjt.mm.mysql.Driver");
+			// что мы делаем с константными строками в коде?
+			Class.forName("org.gjt.mm.mysql.Driver");// зачем ты в каждом методе грузишь драйвер?
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cycling_products?useSSL=false", "root",
 					"marusya");
 			s = con.createStatement();
@@ -43,7 +44,7 @@ public class SQLFindCGDao implements FindCGDao {
 			try {
 				if (rs != null) {
 					rs.close();
-				}
+				}// ЭЭЭЭх, ну вот выбросится тут исключение, догадайся, чтов коде не случится и можно ли это допускать?
 				if (s != null) {
 					s.close();
 				}
