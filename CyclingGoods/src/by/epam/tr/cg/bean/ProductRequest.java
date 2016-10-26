@@ -1,7 +1,7 @@
 package by.epam.tr.cg.bean;
 
 public class ProductRequest extends Request {
-	private int id;// Мария, а создать класс Product никак нельзя было?
+	private int id;
 	private String category;
 	private String name;
 	private int price;
