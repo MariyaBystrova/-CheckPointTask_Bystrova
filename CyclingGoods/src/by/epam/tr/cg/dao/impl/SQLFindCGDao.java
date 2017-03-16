@@ -15,11 +15,15 @@ import by.epam.tr.cg.entity.Product;
 import by.epam.tr.cg.entity.ReportLine;
 
 public class SQLFindCGDao implements FindCGDao {
+	private final static String DRIVER = "org.gjt.mm.mysql.Driver";
+	private final static String CONNECTION_URL = "jdbc:mysql://localhost:3306/cycling_products?useSSL=false";
+	private final static String CONNECTION_USER = "root";
+	private final static String CONNECTION_PASSWORD = "marusya";
 	
 	private final static String SELECT_ALL_FROM_PRODUCT = "SELECT `product`.`product_id`,`product`.`product_category`,`product`.`product_name`,`product`.`product_price`FROM `product`;";
 	private final static String SELECT_FROM_PRODUCT_WHERE_CATEGORY = "SELECT `product`.`product_id`, `product`.`product_category`, `product`.`product_name`,  `product`.`product_price` FROM `product` WHERE `product`.`product_category` = ?;";
 	private final static String SELECT_CATEGORY_PRODUCTCOUNT_MIN_MAX_PRICE_FROM_PRODUCT = "SELECT `product`.`product_category`, COUNT(*),  MIN(`product_price`),  MAX(`product_price`) FROM `product` GROUP BY `product`.`product_category`;";
-	
+
 	@Override
 	public List<Product> getAllProducts() throws DAOException {
 		Connection con = null;
@@ -27,12 +31,11 @@ public class SQLFindCGDao implements FindCGDao {
 		ResultSet rs = null;
 		List<Product> list = new ArrayList<>();
 		try {
-			Class.forName("org.gjt.mm.mysql.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cycling_products?useSSL=false", "root",
-					"marusya");
+			Class.forName(DRIVER);
+			con = DriverManager.getConnection(CONNECTION_URL, CONNECTION_USER, CONNECTION_PASSWORD);
 			s = con.createStatement();
 			rs = s.executeQuery(SELECT_ALL_FROM_PRODUCT);
-			while(rs.next()){
+			while (rs.next()) {
 				list.add(new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
 			}
 		} catch (ClassNotFoundException e) {
@@ -44,9 +47,17 @@ public class SQLFindCGDao implements FindCGDao {
 				if (rs != null) {
 					rs.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (s != null) {
 					s.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (con != null) {
 					con.close();
 				}
@@ -66,14 +77,12 @@ public class SQLFindCGDao implements FindCGDao {
 		ResultSet rs = null;
 		List<Product> list = new ArrayList<>();
 		try {
-
-			Class.forName("org.gjt.mm.mysql.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cycling_products?useSSL=false", "root",
-					"marusya");
+			Class.forName(DRIVER);
+			con = DriverManager.getConnection(CONNECTION_URL, CONNECTION_USER, CONNECTION_PASSWORD);
 			ps = con.prepareStatement(SELECT_FROM_PRODUCT_WHERE_CATEGORY);
 			ps.setString(1, category);
 			rs = ps.executeQuery();
-			while(rs.next()){
+			while (rs.next()) {
 				list.add(new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
 			}
 		} catch (ClassNotFoundException e) {
@@ -85,9 +94,17 @@ public class SQLFindCGDao implements FindCGDao {
 				if (rs != null) {
 					rs.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (ps != null) {
 					ps.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (con != null) {
 					con.close();
 				}
@@ -108,13 +125,11 @@ public class SQLFindCGDao implements FindCGDao {
 		List<ReportLine> list = new ArrayList<>();
 		try {
 
-			Class.forName("org.gjt.mm.mysql.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cycling_products?useSSL=false", "root",
-					"marusya");
+			Class.forName(DRIVER);
+			con = DriverManager.getConnection(CONNECTION_URL, CONNECTION_USER, CONNECTION_PASSWORD);
 			s = con.createStatement();
 			rs = s.executeQuery(SELECT_CATEGORY_PRODUCTCOUNT_MIN_MAX_PRICE_FROM_PRODUCT);
-			while(rs.next()){
-				//String category, int productsCount, int minPrice, int maxPrice
+			while (rs.next()) {
 				list.add(new ReportLine(rs.getString(1), rs.getInt(2), rs.getInt(3), rs.getInt(4)));
 			}
 		} catch (ClassNotFoundException e) {
@@ -126,9 +141,17 @@ public class SQLFindCGDao implements FindCGDao {
 				if (rs != null) {
 					rs.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (s != null) {
 					s.close();
 				}
+			} catch (SQLException e) {
+				throw new DAOException("Database access error.", e);
+			}
+			try {
 				if (con != null) {
 					con.close();
 				}

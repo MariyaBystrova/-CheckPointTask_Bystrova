@@ -15,7 +15,7 @@ import by.epam.tr.cg.command.impl.UpdateProduct;
 public class CommandProvider {
 	private Map<CommandName, Command> commands = new HashMap<CommandName, Command>();
 
-	CommandProvider() {
+	public CommandProvider() {
 		commands.put(CommandName.ADD_PRODUCT, new AddProduct());
 		commands.put(CommandName.DELETE_PRODUCT_BY_ID, new DeleteProduct());
 		commands.put(CommandName.UPDATE_PRODUCT_BY_ID, new UpdateProduct());

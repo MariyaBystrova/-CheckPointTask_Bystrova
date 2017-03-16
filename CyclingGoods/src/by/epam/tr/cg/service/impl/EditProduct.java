@@ -51,7 +51,7 @@ public class EditProduct implements EditProductService {
 		DAOFactory factory = DAOFactory.getInstance();
 		EditCGDao cyclingGoodsDao = factory.getEditCGDao();
 		try {
-			// если поле не null или не пустое - то его надо изменить
+			
 			if (Validator.nameValidation(product.getName())) {
 				if (!cyclingGoodsDao.updateNameProduct(product)) {
 					return false;

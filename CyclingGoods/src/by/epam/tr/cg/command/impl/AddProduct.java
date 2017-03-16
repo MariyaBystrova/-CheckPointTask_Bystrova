@@ -7,7 +7,6 @@ import by.epam.tr.cg.bean.ProductRequest;
 import by.epam.tr.cg.bean.Request;
 import by.epam.tr.cg.bean.Response;
 import by.epam.tr.cg.command.Command;
-import by.epam.tr.cg.entity.Product;
 import by.epam.tr.cg.service.EditProductService;
 import by.epam.tr.cg.service.exception.ServiceException;
 import by.epam.tr.cg.service.factory.ServiceFactory;
@@ -27,14 +26,12 @@ public class AddProduct implements Command {
 			addProductRequest = (ProductRequest)request;
 		}
 		
-		Product product = new Product(addProductRequest.getCategory(), addProductRequest.getName(), addProductRequest.getPrice());
-		
 		ServiceFactory factory = ServiceFactory.getInstance();
 		EditProductService editService = factory.getEditProductService();
 		
 		Response response= new Response();
 		try {
-			editService.addProduct(product);
+			editService.addProduct(addProductRequest.getProduct());
 			response.setErrorStatus(false);
 			response.setSimpleMessage(PRODUCT_ADED);
 		} catch (ServiceException e) {

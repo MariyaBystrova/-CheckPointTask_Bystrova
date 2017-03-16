@@ -10,6 +10,7 @@ import by.epam.tr.cg.bean.Response;
 import by.epam.tr.cg.bean.ShowCategoryRequest;
 import by.epam.tr.cg.command.CommandName;
 import by.epam.tr.cg.controller.Controller;
+import by.epam.tr.cg.entity.Product;
 
 public class View {
 	private final static Logger rootLogger = LogManager.getRootLogger();
@@ -35,9 +36,7 @@ public class View {
 		//ADD PRODUCT
 		ProductRequest addProductReq = new ProductRequest();
 		addProductReq.setCommandName(CommandName.ADD_PRODUCT);
-		addProductReq.setCategory("Equipment");
-		addProductReq.setName("Arms protector");
-		addProductReq.setPrice(55);
+		addProductReq.setProduct(new Product("Equipment","Arms protector", 55));
 
 		response = controller.doAction(addProductReq);
 
@@ -63,10 +62,7 @@ public class View {
 		//UPDATE PRODUCT
 		ProductRequest updateProductReq = new ProductRequest();
 		updateProductReq.setCommandName(CommandName.UPDATE_PRODUCT_BY_ID);
-		updateProductReq.setId(12);
-		updateProductReq.setName("Summer gloves");
-		updateProductReq.setCategory("Equipment");
-		updateProductReq.setPrice(30);
+		updateProductReq.setProduct(new Product(12, "Equipment","Arms protector", 55));
 
 		response = controller.doAction(updateProductReq);
 

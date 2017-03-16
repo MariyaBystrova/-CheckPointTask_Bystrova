@@ -7,7 +7,6 @@ import by.epam.tr.cg.bean.ProductRequest;
 import by.epam.tr.cg.bean.Request;
 import by.epam.tr.cg.bean.Response;
 import by.epam.tr.cg.command.Command;
-import by.epam.tr.cg.entity.Product;
 import by.epam.tr.cg.service.EditProductService;
 import by.epam.tr.cg.service.exception.ServiceException;
 import by.epam.tr.cg.service.factory.ServiceFactory;
@@ -26,15 +25,12 @@ public class UpdateProduct implements Command {
 			updateProductRequest = (ProductRequest) request;
 		}
 
-		Product product = new Product(updateProductRequest.getId(), updateProductRequest.getCategory(),
-				updateProductRequest.getName(), updateProductRequest.getPrice());
-
 		ServiceFactory factory = ServiceFactory.getInstance();
 		EditProductService editService = factory.getEditProductService();
 
 		Response response = new Response();
 		try {
-			editService.updateProduct(product);
+			editService.updateProduct(updateProductRequest.getProduct());
 			response.setErrorStatus(false);
 			response.setSimpleMessage(PRODUCT_UPDATED);
 		} catch (ServiceException e) {

@@ -1,54 +1,32 @@
 package by.epam.tr.cg.bean;
 
+import by.epam.tr.cg.entity.Product;
+
 public class ProductRequest extends Request {
-	private int id;
-	private String category;
-	private String name;
-	private int price;
+
+	private Product product;
 
 	public ProductRequest() {
 	}
 
+	public ProductRequest(Product product) {
+		this.product = product;
+	}
+
 	public ProductRequest(String category, String name, int price) {
-		this.category = category;
-		this.name = name;
-		this.price = price;
+		this.product = new Product(category, name, price);
 	}
 
 	public ProductRequest(int id, String category, String name, int price) {
-		this(category, name, price);
-		this.id = id;
+		this.product = new Product(id, category, name, price);
 	}
 
-	public int getId() {
-		return id;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
 }
